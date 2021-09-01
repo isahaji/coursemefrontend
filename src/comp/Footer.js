@@ -8,6 +8,7 @@ import { Button } from '@material-ui/core';
 
 
 
+
 const Footer = () => {
 return (
     <footer>
@@ -16,7 +17,7 @@ return (
         <Logo />    
         <Name />
         <Social />
-        
+
         
     </div>
 
