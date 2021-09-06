@@ -3,7 +3,7 @@ import Header from './comp/Header';
 import Footer from './comp/Footer';
 import Cards from './comp/Card';
 import axios from 'axios';
-import Random from './comp/Random';
+
 
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
     </div>
 
 
-        <Random/>
+
 
     <Footer />  
 
