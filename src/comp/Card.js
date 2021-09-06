@@ -13,15 +13,15 @@ const useStyles = makeStyles({
   },
 });
 
- const Cards = ({ url, title, Desc, link }) => {
+ const Cards = ({ url, title, Desc, link  }) => {
   const classes = useStyles();
 
-  return (
+        return (
     <div>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-          component="img"
+          component="img" 
           alt="Contemplative Reptile"
           height="140"
           width="120"
