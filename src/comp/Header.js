@@ -35,7 +35,7 @@ const Header = () => {
           <BookIcon style={{color: 'white' }}/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            CouseMe
+            CourseMe
           </Typography>
           <Tooltip title="Add a Course">
            <Button href="https://kce4yvol0sb.typeform.com/to/UnfPM453?typeform-source=admin.typeform.com" color="inherit"> <Add /> </Button> 

@@ -30,7 +30,7 @@ return (
 function Logo() {
     return(
         <div className="pr-2 text-white">
-           <span > <BookIcon style={{color: 'white' }}/> Courz.Me </span>
+           <span > <BookIcon style={{color: 'white' }}/> CourseMe </span>
         </div>
        
     );
