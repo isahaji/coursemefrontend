@@ -10,7 +10,7 @@ const AddCourse = () => {
 
   function postData() {
 
-
+    //yeet
     if (rating > 5 || rating < 1) {
       alert("Number has to be less than 5 and greater than 1")
     } else {
