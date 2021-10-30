@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player/youtube";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -20,15 +20,19 @@ const CoursePage = () => {
 
 
   return (
-    <div className="bg-gray-50 h-full mt-2 ">
-      <div className="p-2 text-center">Courses</div>
+    <div className="bg-gray-50 h-full dark:bg-gray-700 mt-2 ">
+      <div className="p-2 text-center dark:text-white text-3xl">COURSEME</div>
 
-      <div className="md:flex lg:flex lg:ml-12">
-        <div className="">
+      <div className="md:flex  lg:flex lg:ml-12">
+        <div >
           <ReactPlayer
             url={`https://www.youtube.com/watch?v=${youtube}`}
             playing={play}
             playbackRate={playBack}
+            width={window.screen.width > 1500 ? 800 : window.screen.width}
+            height={window.screen.height > 700 ? 600 : window.screen.height/2}
+            className="lg:p-24"
+            controls={false}
           />
 
           <div className="flex m-auto justify-center py-2">
@@ -49,7 +53,7 @@ const CoursePage = () => {
             </ButtonGroup>
           </div>
         </div>
-        <div className="ml-12 mb-2 w-96 bg-green-100 md:rounded-2xl lg:rounded-2xl">
+        <div className="lg:ml-12 mb-2 w-96 bg-green-100 md:rounded-2xl lg:rounded-2xl">
           <div className="text-center items-center font-bold  text-4xl text-gray-700 h-12 mt-2 ml-12">
             {" "}
             {title}{" "}

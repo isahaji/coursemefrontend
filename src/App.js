@@ -26,12 +26,14 @@ function App() {
           <Route exact={true} path="/form" component={Form} />
         </Switch>
       </Router>
-      <div className="">
+      <div className="dark:bg-gray-700">
      <a href="/add"> <div className="p-2 object-none object-right-bottom">
       <Fab   color="primary" aria-label="add">
         <AddIcon />
       </Fab>
-      </div> </a>
+      </div> 
+      
+      </a>
         <Footer />
       </div>
     </div>

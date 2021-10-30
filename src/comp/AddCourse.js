@@ -42,7 +42,7 @@ const AddCourse = () => {
   }
 
   return (
-    <div className="h-full ">
+    <div className="h-full dark:bg-gray-700 p-2 ">
       <div className="grid grid-col-1 gap-3 rounded-2xl bg-green-500 justify-center m-12 p-6 ">
         <div className="text-center text-white p-2 font-bold text-3xl">
           Add A Course
@@ -82,7 +82,7 @@ const AddCourse = () => {
           onChange={(e) => setUtube(e.target.value)}
           className="bg-gray-100 p-2 rounded-lg border-2 border-indigo-500 shadow-md focus:outline-none focus:border-indigo-600"
         />
-        <button className="bg-blue-500 hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue-600 rounded" onClick={postData}>Add </button>
+        <button className="bg-blue-500 hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-600 rounded" onClick={postData}>Add </button>
       </div>
     </div>
   );

@@ -14,10 +14,10 @@ const Footer = () => {
       </div>
       <div className="mr-2 text-gray-50 grid grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         <a href="https://twitter.com/iisahaji">
-          <TwitterIcon></TwitterIcon>
+          <TwitterIcon className="hover:text-blue-600"></TwitterIcon>
         </a>
         <a href="https://github.com/isahaji">
-          <GitHubIcon> </GitHubIcon>
+          <GitHubIcon className="hover:text-black"> </GitHubIcon>
         </a>
       </div>
     </footer>

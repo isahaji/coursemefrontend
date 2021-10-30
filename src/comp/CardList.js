@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
 
 import Cards from "./Card";
-// import StarIcon from '@mui/icons-material/Star';
+
 import axios from "axios";
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
-// import Select from '@mui/material/Select';
-// import Box from '@mui/material/Box';
-// import Skeleton from '@mui/material/Skeleton';
-import SearchIcon from "@mui/icons-material/Search";
 
 function CardList() {
   const instance = axios.create({
@@ -23,16 +16,18 @@ function CardList() {
   // eslint-disable-next-line
   const [load, setLoad] = useState(true);
 
+
   async function fetchData() {
     const req = await instance.get("/cards");
 
     setCard(req.data);
   }
-  useEffect(() => {
 
+  useEffect(() => {
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     let filteredData = card;
@@ -55,14 +50,8 @@ function CardList() {
     setData(filteredData);
   }, [searchTerm, rat, card]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoad(false);
-    }, 3000);
-  });
-
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-700">
       <div className=" flex justify-around items-center flex-grow">
         <div className="flex items-center justify-center">
           <div className="mt-1">
@@ -73,11 +62,6 @@ function CardList() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-          </div>
-          <div className="mt-1 p-3">
-            <div className="text-purple-lighter bg-green-300 p-3 rounded-xl text-white ring-2 focus:ring-offset-2 ring-green-400  cursor-pointer hover:bg-green-400  ">
-              <SearchIcon></SearchIcon>
-            </div>
           </div>
         </div>
 
@@ -106,7 +90,7 @@ function CardList() {
 
       </div> */}
       </div>
-      <div className="grid mt-4 place-items-center w-screen align-middle pb-12de    sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-x-0">
+      <div className="grid mt-4 place-items-center w-screen align-middle pb-12     sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-x-0">
         {searchTerm.length >= 1
           ? data.map((datas) => (
               <Cards
