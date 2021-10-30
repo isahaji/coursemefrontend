@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router";
 import ReactPlayer from "react-player/youtube";
 import Button from "@mui/material/Button";
@@ -13,6 +13,11 @@ const CoursePage = () => {
   let { title, desc, rating, youtube } = useParams();
   const [play, pause] = useState(false);
   const [playBack, setPlayBack] = useState(1);
+
+  useEffect(() => {
+    document.title = `${title} - CourseMe`;
+  }, [title]);
+
 
   return (
     <div className="bg-gray-50 h-full mt-2 ">
