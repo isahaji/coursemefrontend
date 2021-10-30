@@ -23,7 +23,7 @@ const Header = () => {
     let user = auth.currentUser;
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
-      .then((result) => {
+      .then(() => {
         console.log(`You are signed in`);
         setLog(true);
       })
@@ -31,6 +31,25 @@ const Header = () => {
         console.log(error);
       });
   }
+
+  // function ghub() {
+  //   const provider = new GithubAuthProvider();
+  //   const auth = getAuth();
+  //   signInWithPopup(auth, provider)
+  //     .then((result) => {
+  //       // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+  //       console.log(`You are signed in`);
+  //       setLog(true);
+
+  //       // The signed-in user info.
+  //       // ...
+  //     })
+  //     .catch((error) => {
+  //       // Handle Errors here.
+  //       console.log(error);
+  //       // ...
+  //     });
+  // }
 
   function signout() {
     const auth = getAuth();
@@ -43,8 +62,7 @@ const Header = () => {
         .catch((error) => {
           console.log(error);
         });
-
-    },1500);
+    }, 1500);
   }
 
   const auth = getAuth();
@@ -53,98 +71,54 @@ const Header = () => {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       setPerson(user);
-
-      
-    } else {
     }
   });
 
   return (
     <div className="flex bg-gray-200 justify-between items-center ">
-      <div className="ml-2 flex gap-2">
-        <BookIcon></BookIcon> <p className="text-gray-700">CourseMe. </p>
-      </div>
+      <a href="/"> <div className="ml-2 flex gap-2">
+        <BookIcon ></BookIcon>{" "}
+        <p className="text-gray-700">CourseMe. </p>
+      </div></a>
 
       <div className="flex items-center">
-        
-
-        { log ? (<div className="">
-          <div class="m-3 flex gap-2">
-            <button
-              onClick={signout}
-              class="bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"
-            >
-              <span class="mx-auto">
-                <LogoutIcon></LogoutIcon>
-              </span>
-            </button>
-            <div className="mr-2">
-            <img src={person.photoURL} className="rounded-full h-11" alt="" />
-        </div>
+        {log ? (
+          <div className="">
+            <div className="m-3 flex gap-2">
+              <button
+                onClick={signout}
+                className="bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"
+              >
+                <span className="mx-auto">
+                  <LogoutIcon></LogoutIcon>
+                </span>
+              </button>
+              <div className="mr-2">
+                <img
+                  src={person.photoURL}
+                  className="rounded-full h-11"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
-        </div>) :
-
-              (<div className="">
-          <div class="m-3">
-            <button
-              onClick={sign}
-              class=" bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"
-            >
-              <span class="mx-auto">
-                <LoginIcon></LoginIcon>
-              </span>
-            </button>
+        ) : (
+          <div className="">
+            <div className="m-3">
+              <button
+                onClick={sign}
+                className=" bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"
+              >
+                <span className="mx-auto">
+                  <LoginIcon></LoginIcon>
+                </span>
+              </button>
+            </div>
           </div>
-        </div>)}
-        
+        )}
       </div>
     </div>
   );
 };
 
 export default Header;
-
-// {/* {log ? (
-//   <button onClick={signout} className="">
-//     {" "}
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       class="h-6 w-6"
-//       fill="none"
-//       viewBox="0 0 24 24"
-//       stroke="currentColor"
-//     >
-//       <path
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
-//         stroke-width="2"
-//         d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-//       />
-//     </svg>{" "}
-//   </button>
-// ) : (
-//   <button onClick={sign} className="">
-//     {" "}
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       class="h-6 w-6"
-//       fill="none"
-//       viewBox="0 0 24 24"
-//       stroke="currentColor"
-//     >
-//       <path
-//         stroke-linecap="round"
-//         stroke-linejoin="round"
-//         stroke-width="2"
-//         d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-//       />
-//     </svg>{" "}
-//   </button>
-// )}
-
-// {log && (
-//   <div className="ml-2 flex flex-col items-center">
-//     <img src={photo} alt="" className="h-8 rounded-full " />
-//     <h4>{name}</h4>
-//   </div>
-// )} */}
